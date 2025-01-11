@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>paralazmuwu🥺</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+
         body {
             margin: 0;
             padding: 0;
@@ -13,6 +15,8 @@
             justify-content: center;
             align-items: center;
             background: linear-gradient(135deg, #ffd6e7 0%, #ffb6c1 50%, #ffc0cb 100%);
+            font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+            padding: 15px;
         }
 
         .popup-form {
@@ -20,7 +24,8 @@
             border: 2px solid #ff99cc;
             border-radius: 15px;
             padding: 20px;
-            width: 600px;
+            width: 100%;
+            max-width: 600px;
             box-shadow: 0 0 20px rgba(0,0,0,0.1);
             backdrop-filter: blur(5px);
         }
@@ -29,18 +34,22 @@
             display: flex;
             align-items: center;
             margin-bottom: 20px;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
         }
 
         .anime-char {
-            width: 200px;
-            height: 200px;
+            width: min(200px, 40vw);
+            height: min(200px, 40vw);
             margin-right: 15px;
         }
 
         .popup-title {
             color: #6b4f89;
-            font-size: 22px;
-            font-family: "Comic Sans MS", cursive;
+            font-size: clamp(18px, 4vw, 22px);
+            text-align: center;
         }
 
         .form-group {
@@ -100,14 +109,15 @@
             background-color: rgba(255, 214, 231, 0.95);
             border: 2px solid #ff99cc;
             border-radius: 15px;
-            padding: 10px;
+            padding: 15px;
             margin-bottom: 20px;
             color: #6b4f89;
             font-family: "Comic Sans MS", cursive;
             text-align: center;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             backdrop-filter: blur(5px);
-            white-space: nowrap;
+            white-space: normal;
+            font-size: clamp(14px, 3.5vw, 16px);
         }
 
         #ipAddress, #coordinates {
@@ -125,7 +135,8 @@
             border: 2px solid #ff99cc;
             border-radius: 15px;
             padding: 20px;
-            width: 600px;
+            width: 90%;
+            max-width: 600px;
             text-align: center;
             box-shadow: 0 0 20px rgba(0,0,0,0.2);
             backdrop-filter: blur(5px);
@@ -150,13 +161,13 @@
         }
 
         .success-popup img {
-            width: 250px;
-            height: 250px;
+            width: min(250px, 70vw);
+            height: min(250px, 70vw);
             margin: 10px 0;
         }
 
         .success-popup p {
-            font-size: 24px;
+            font-size: clamp(18px, 4vw, 24px);
             line-height: 1.5;
             text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
             background: rgba(255, 255, 255, 0.4);
@@ -258,6 +269,36 @@
         .social-button img {
             width: 20px;
             height: 20px;
+        }
+
+        @media (max-width: 480px) {
+            .popup-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .anime-char {
+                margin-right: 0;
+            }
+            
+            .form-group label {
+                font-size: 16px;
+            }
+            
+            .form-group input {
+                font-size: 14px;
+                padding: 10px;
+            }
+            
+            .submit-btn {
+                font-size: 16px;
+                padding: 12px 20px;
+            }
+            
+            .close-btn {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
         }
     </style>
 </head>
